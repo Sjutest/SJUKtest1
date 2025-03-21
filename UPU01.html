@@ -6,17 +6,17 @@
     <title>Unitate Primiri Urgente</title>
     <style>
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Times New Roman', serif; /* Font Times New Roman */
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa;
+            background-color: #e0f7fa; /* Fundal deschis */
         }
 
         .welcome-container {
-            position: relative;
+            position: relative; /* Permite poziționarea absolută a textului */
             text-align: center;
             padding: 50px;
-            color: white;
+            color: white; /* Text alb pentru contrast */
         }
 
         .background-image {
@@ -25,204 +25,185 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('image1.png');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
+            background-image: url('image1.png'); /* Imaginea de fundal */
+            background-size: cover; /* Acoperă întregul container */
+            background-position: center; /* Centrează imaginea */
+            z-index: -1; /* Pune imaginea în spatele textului */
         }
 
         .text-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 100px;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundal semi-transparent */
+            padding: 20px; /* Padding pentru text */
+            border-radius: 10px; /* Margini rotunjite pentru fundal */
+            display: inline-block; /* Permite centrare */
+            margin-top: 100px; /* Muta caseta mai jos */
         }
 
         h1 {
             font-size: 36px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Umbră pentru text */
         }
 
         p {
             font-size: 18px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Umbră pentru text */
         }
 
+        /* Stiluri pentru butoane */
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 10px 20px; /* Dimensiuni originale pentru butoane */
+            font-size: 16px; /* Mărimea textului butoanelor originale */
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            margin: 5px;
+            margin: 5px; /* Spațiu între butoane */
             transition: background-color 0.3s;
-            background-color: #737d4b;
+            background-color: #737d4b; /* Culoarea specificată pentru butoane */
         }
 
         .logout-button {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #d9534f;
+            top: 10px; /* Poziționare mai sus */
+            right: 10px; /* Poziționare mai aproape de margine */
+            background-color: #d9534f; /* Roșu mai calm pentru butonul de deconectare */
         }
 
         .logout-button:hover {
-            background-color: #c9302c;
+            background-color: #c9302c; /* Roșu mai închis la hover */
         }
 
         .left-buttons {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 10px; /* Poziționare mai sus */
+            left: 10px; /* Poziționare mai aproape de margine */
         }
 
         .left-buttons .button:hover {
-            background-color: #5a5f3b;
+            background-color: #5a5f3b; /* Culoare mai închisă la hover */
         }
 
+        /* Stiluri pentru casetele laterale */
         .sidebar {
             position: absolute;
-            top: 298px;
-            width: 300px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            font-size: 16px;
-            color: #000;
-            min-height: 500px;
-            text-align: left;
+            top: 400px; /* Poziționare mai jos */
+            width: 250px; /* Lățimea casetelor */
+            padding: 20px; /* Padding pentru casete */
+            background-color: #ffffff; /* Fundal alb pentru casete */
+            border-radius: 10px; /* Margini rotunjite pentru casete */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru casete */
+            font-size: 16px; /* Mărimea textului */
+            color: #000; /* Culoare text neagră pentru casete */
+            min-height: 300px; /* Înălțimea minimă a casetelor pentru a se asigura că textul încapă */
+            text-align: left; /* Aliniere la stânga */
         }
 
         .left-sidebar {
-            left: 20px;
+            left: 20px; /* Poziționare în stânga */
         }
 
         .right-sidebar {
-            right: 20px;
+            right: 20px; /* Poziționare în dreapta */
         }
 
         .sidebar h2 {
-            color: #737d4b;
-            margin-top: 0;
-            font-size: 20px;
+            color: #737d4b; /* Culoare titlu pentru casete */
+            margin-top: 0; /* Elimină marginea de sus */
+            font-size: 20px; /* Mărimea titlului */
         }
 
         .sidebar p {
-            color: #000;
+            color: #000; /* Culoare text neagră pentru casete */
         }
 
         .sidebar ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: disc; /* Folosește bulinute pentru listă */
+            padding-left: 20px; /* Adaugă un padding la stânga pentru listă */
         }
 
         .sidebar li {
-            margin: 5px 0;
-            color: #000;
+            margin: 5px 0; /* Spațiu între elementele listei */
+            color: #000; /* Culoare text neagră pentru elementele listei */
         }
 
         .button-container {
             position: absolute;
-            top: 600px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            top: 600px; /* Poziționare jos */
+            left: 50%; /* Centrare orizontală */
+            transform: translateX(-50%); /* Ajustare pentru centrul orizontal */
+            display: flex; /* Folosește flexbox pentru a alinia buto anele */
+            justify-content: center; /* Centrează butoanele */
+            flex-wrap: wrap; /* Permite rânduri multiple pentru butoane */
         }
 
-        .large-button {
-            display: inline-block;
-            padding: 20px 40px;
-            font-size: 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: background-color 0.3s;
-            background-color: #737d4b;
-            width: 200px;
+        /* Stiluri responsiv */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px; /* Dimensiune mai mică pentru titlu pe ecrane mici */
+            }
+
+            p {
+                font-size: 16px; /* Dimensiune mai mică pentru paragrafe pe ecrane mici */
+            }
+
+            .welcome-container {
+                padding: 20px; /* Padding mai mic pe ecrane mici */
+            }
+
+            .text-overlay {
+                font-size: 16px; /* Dimensiune mai mică pentru textul din overlay */
+            }
+
+            .button {
+                padding: 8px 16px; /* Dimensiuni mai mici pentru butoane pe ecrane mici */
+                font-size: 14px; /* Dimensiune mai mică pentru textul butoanelor */
+            }
+
+            .sidebar {
+                width: 100%; /* Lățime completă pentru casete pe ecrane mici */
+                position: relative; /* Poziționare relativă pe ecrane mici */
+                top: auto; /* Resetează poziția pe ecrane mici */
+                margin: 10px 0; /* Adaugă margine între casete */
+            }
+
+            .button-container {
+                flex-direction: column; /* Aranjează butoanele pe verticală pe ecrane mici */
+            }
         }
     </style>
 </head>
 <body>
     <div class="welcome-container">
         <div class="background-image"></div>
-        
         <div class="text-overlay">
-            <h1>Bine ați venit la Unitatea Primiri Urgente</h1>
-            <p>Suntem aici pentru a oferi asistență medicală rapidă și eficientă. Echipa noastră de specialiști este pregătită să răspundă nevoilor dumneavoastră .</p>
-        </div>
-
-        <a href="index.html" class="button logout-button">Deconectare</a>
-
-        <div class="left-buttons">
-            <a href="Registru.html" class="button" id="showRectangle">REGISTRU DE FUNCȚIONARE</a>
-            <a href="#" class="button">Buton 2</a>
-            <a href="#" class="button">Buton 3</a>
-            <a href="#" class="button">Buton 4</a>
-            <a href="#" class="button">Buton 5</a>
-        </div>
-
-        <div class="sidebar left-sidebar">
-            <h2>Secția UPU - Urgențe pentru Viață</h2>
-            <p>Secția de Primiri Urgente (UPU) a Spitalului Județean de Urgențe Krostovik este un punct vital al sistemului medical, oferind îngrijire de urgență pacienților aflați în stare critică. Dotată cu echipamente de ultimă generație și un personal bine pregătit, UPU este disponibilă 24/7 pentru a gestiona cazuri medicale grave, de la traumatisme severe la afecțiuni cardiace acute.</p>
-            <p>Structura secției include:</p>
-            <ul>
-                <li>Zona de triaj – unde pacienții sunt evaluați rapid în funcție de gravitate.</li>
-                <li>Sala de resuscitare – destinată intervențiilor critice.</li>
-                <li>Unități de tratament și monitorizare – pentru stabilizarea pacienților.</li>
-                <li>Compartimentul de imagistică rapidă – pentru investigații precum radiografii și tomografii.</li>
-            </ul>
-            <p>Echipa UPU este formată din medici de urgență, asistenți dedicați și paramedici instruiți, toți lucrând sub presiune pentru a salva vieți în fiecare clipă.</p>
-        </div>
-
-        <div class="sidebar right-sidebar">
-            <h2>Lista cu medici și asistenți din secția UPU</h2>
-            <h3>Medici de urgență</h3>
-            <ul>
-                <li>Dr. Andrei Vasilescu (Șef de secție)</li>
-                <li>Dr. Elena Popescu</li>
-                <li>Dr. Mihai Dumitru</li>
-                <li>Dr. Oana Radu</li>
-                <li>Dr. Gabriel Ionescu</li>
-                <li>Dr. Cristina Pavel</li>
-                <li>Dr. Alexandru Marinescu</li>
-                <li>Dr. Diana Stancu</li>
-            </ul>
-            <h3>Asistenți medicali</h3>
-            <ul>
-                <li>Maria Dobre (Asistent șef)</li>
-                <li>Ionel Bălan</li>
-                <li>Alina Georgescu</li>
-                <li>Răzvan Preda</li>
-                <li>Claudia Enache</li>
-                <li>Sorin Mihăilescu</li>
-                <li>Georgiana Matei</li>
-                <li>Octavian Roșu</li>
-                <li>Daniela Tomescu</li>
-                <li>Florin Nistor</li>
-            </ul>
-        </div>
-
-        <div class="button-container">
-            <a href="#" class="large-button">6</a>
-            <a href="#" class="large-button">7</a>
-            <a href="#" class="large-button">8</a>
-            <a href="#" class="large-button">9</a>
+            <h1>Bine ați venit la Unitatea de Primiri Urgente</h1>
+            <p>Asigurați-vă că aveți toate informațiile necesare.</p>
+            <div class="button-container">
+                <a href="#" class="button">Informații</a>
+                <a href="#" class="button logout-button">Deconectare</a>
+            </div>
         </div>
     </div>
-
-    <script>
-        const showButton = document.getElementById('showRectangle');
-
-        showButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Previne comportamentul implicit al link-ului
-            window.location.href = 'Registru.html'; // Redirecționează către Registru.html
-        });
-    </script>
+    <div class="left-buttons">
+        <a href="#" class="button">Buton Stânga 1</a>
+        <a href="#" class="button">Buton Stânga 2</a>
+    </div>
+    <div class="left-sidebar sidebar">
+        <h2>Informații Utile</h2>
+        <p>Consultați următoarele resurse:</p>
+        <ul>
+            <li>Număr de urgență: 112</li>
+            <li>Adresa unității: Str. Exemplu, Nr. 1</li>
+            <li>Program: 24/7</li>
+        </ul>
+    </div>
+    <div class="right-sidebar sidebar">
+        <h2>Contact</h2>
+        <p>Pentru întrebări, contactați-ne:</p>
+        <ul>
+            <li>Email: contact@urgente.ro</li>
+            <li>Telefon: 0123 456 789</li>
+        </ul>
+    </div>
 </body>
 </html>
