@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Fundal deschis pentru contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff; /* Fundal alb pentru formular */
+    padding: 30px; /* Padding pentru container */
+    border-radius: 10px; /* Margini rotunjite */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    width: 320px; /* Lățime fixă */
+    text-align: center; /* Centrarea textului */
+}
+
+h2 {
+    margin-bottom: 20px; /* Spațiu sub titlu */
+    color: #333333; /* Gri închis pentru titlu */
+    font-size: 24px; /* Mărime titlu */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Text îngroșat pentru etichete */
+    color: #555555; /* Gri mediu pentru etichete */
+    text-align: left; /* Aliniere la stânga pentru etichete */
+}
+
+input {
+    width: calc(100% - 20px); /* Lățime completă minus padding */
+    padding: 10px; /* Padding pentru câmpuri */
+    margin-bottom: 15px; /* Spațiu între câmpuri */
+    border: 1px solid #cccccc; /* Gri deschis pentru margini */
+    border-radius: 5px; /* Margini rotunjite */
+    font-size: 16px; /* Mărime text */
+    transition: border-color 0.3s; /* Tranziție pentru efectul de focus */
+    box-sizing: border-box; /* Include padding în lățime */
+}
+
+input:focus {
+    border-color: #888888; /* Gri mediu la focus */
+    outline: none; /* Eliminarea conturului implicit */
+}
+
+button {
+    width: 100%; /* Lățime completă pentru buton */
+    padding: 10px; /* Padding pentru buton */
+    background-color: #555555; /* Gri închis pentru buton */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Margini rotunjite */
+    font-size: 16px; /* Mărime text pentru buton */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Tranziție pentru efectul de hover */
+}
+
+button:hover {
+    background-color: #444444; /* Gri mai închis la hover */
+}
+
+.error {
+    color: #e74c3c; /* Roșu pentru mesajele de eroare */
+    margin-top: 10px;
+    font-weight: bold; /* Text îngroșat pentru mesajele de eroare */
+}

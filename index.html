@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Logare</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif; /* Font Times New Roman */
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Fundal deschis */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Întreaga înălțime a ferestrei */
+            position: relative; /* Permite poziționarea absolută a imaginilor */
+        }
+
+        .image-left {
+            position: absolute;
+            left: 0; /* Poziționare la stânga */
+            top: 0; /* Poziționare sus */
+            height: 100%; /* Înălțimea imaginii pe întreaga pagină */
+            width: auto; /* Lățimea automată pentru a menține proporțiile */
+        }
+
+        .image-right {
+            position: absolute;
+            right: 0; /* Poziționare la dreapta */
+            top: 0; /* Poziționare sus */
+            height: 100%; /* Înălțimea imaginii pe întreaga pagină */
+            width: auto; /* Lățimea automată pentru a menține proporțiile */
+        }
+
+        .title {
+            position: absolute;
+            top: 20px; /* Poziționare sus */
+            left: 50%; /* Centrare orizontală */
+            transform: translateX(-50%); /* Ajustare pentru centrul orizontal */
+            font-size: 32px; /* Mărimea titlului */
+            color: #737d4b; /* Culoare titlu */
+            text-align: center; /* Centrarea textului */
+            z-index: 2; /* Asigură că titlul este deasupra imaginilor */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Umbră pentru titlu */
+            font-weight: bold; /* Font bold pentru titlu */
+        }
+
+        .login-container {
+            width: 400px; /* Lățimea containerului */
+            padding: 30px; /* Padding pentru container */
+            background-color: #ffffff; /* Fundal alb pentru container */
+            border-radius: 10px; /* Margini rotunjite pentru container */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Umbră pentru container */
+            text-align: center; /* Centrarea textului */
+            z-index: 1; /* Asigură că containerul este deasupra imaginilor */
+        }
+
+        h1 {
+            color: #737d4b; /* Culoare titlu */
+            margin-bottom: 10px; /* Spațiu sub titlu */
+            font-size: 24px; /* Mărimea titlului */
+        }
+
+        h2 {
+            color: #737d4b; /* Culoare subtitlu */
+            margin-bottom: 20px; /* Spațiu sub subtitlu */
+            font-size: 20px; /* Mărimea subtitlului */
+        }
+
+        label {
+            display: block; /* Fiecare etichetă pe o linie nouă */
+            margin-bottom: 5px; /* Spațiu între etichetă și câmp */
+            color: #555; /* Culoare etichetă */
+            text-align: left; /* Alinierea etichetei la stânga */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%; /* Lățimea câmpurilor formularului */
+            height: 35px; /* Înălțimea câmpurilor formularului */
+            padding: 8px; /* Padding pentru câmpurile formularului */
+            font-size: 14px; /* Mărimea textului pentru câmpurile formularului */
+            border: 1px solid #ccc; /* Border gri deschis pentru câmpurile formularului */
+            border-radius: 5px; /* Margini rotunjite pentru câmpurile formularului */
+            margin-bottom: 20px; /* Spațiu între câmpuri */
+            transition: border-color 0.3s; /* Tranziție pentru border */
+            display: block; /* Fiecare câmp pe o linie nouă */
+            margin-left: auto; /* Centrarea câmpului */
+            margin-right: auto; /* Centrarea câmpului */
+        }
+
+        input:focus {
+            border-color: #737d4b; /* Border verde la focus */
+            outline: none; /* Elimină outline-ul implicit */
+        }
+
+        button {
+            width: 100%; /* Lățimea butonului */
+            height: 40px; /* Înălțimea butonului */
+            padding: 10px; /* Padding pentru buton */
+            font-size: 16px; /* Mărimea textului pentru buton */
+            background-color: #737d4b; /* Fundal verde pentru buton */
+            color: #ffffff; /* Text alb pentru buton */
+            border: none; /* Fără border pentru buton */
+            border-radius: 5px; /* Margini rotunjite pentru buton */
+            cursor: pointer; /* Cursor pointer pentru buton */
+            transition: background-color 0.3s; /* Tranziție pentru fundal */
+        }
+
+        button:hover {
+            background-color: #5a5f3b; /* Fundal verde mai închis pentru buton la hover */
+        }
+
+        .error {
+            color: red; /* Culoare roșie pentru mesajele de eroare */
+            text-align: center; /* Centrarea mesajului de eroare */
+            margin-top: 10px; /* Spațiu deasupra mesajului de eroare */
+        }
+    </style>
+</head>
+<body>
+    <img src="st1.png" alt="Imagine Stanga" class="image-left">
+    <img src="dr1.png" alt="Imagine Dreapta" class="image-right">
+    
+    <div class="title">Spitalul Județean de Urgențe Krostovik</div>
+    
+    <div class="login-container">
+        <h1>Logare</h1>
+        <form id="loginForm">
+            <label for="username">Utilizator:</label>
+            <input type="text" id="username" required>
+            <label for="password">Parola:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Logare</button>
+        </form>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificarea utilizatorului și parolei
+            if (username === 'SJUK-UPU' && password === 'Krosto@upu2025') {
+                window.location.href = 'UPU01.html'; // Redirecționare către pagina UPU
+            } else if (username === 'ADMIN2025SJUK' && password === '@dminSJUK2025') {
+                window.location.href = 'Admin02.html'; // Redirecționare către pagina Admin
+            } else {
+                document.getElementById('error-message').textContent = 'Utilizator sau parolă incorectă!';
+            }
+        });
+    </script>
+</body>
+</html>
