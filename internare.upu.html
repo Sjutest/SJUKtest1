@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular de Internare Pacienți</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif; /* Fontul paginii */
+            margin: 0; /* Elimină marginile implicite */
+            padding: 0; /* Elimină padding-ul */
+            background-color: #e0f7fa; /* Fundal colorat */
+            display: flex; /* Folosește flexbox pentru aliniere */
+            height: 100vh; /* Întreaga înălțime a ferestrei */
+        }
+        .side-image {
+            width: 100px; /* Lățimea imaginilor laterale */
+            height: 100%; /* Întreaga înălțime a ferestrei */
+            object-fit: cover; /* Asigură că imaginea se potrivește bine */
+        }
+        .form-container {
+            flex: 1; /* Permite formularului să ocupe tot spațiul disponibil */
+            display: flex; /* Folosește flexbox pentru a centra formularul */
+            justify-content: center; /* Centrează formularul pe orizontală */
+            align-items: flex-start; /* Aliniază formularul la începutul containerului */
+            padding: 20px; /* Padding pentru formular */
+            overflow-y: auto; /* Permite derularea verticală */
+        }
+        .container {
+            width: 100%; /* Lățimea formularului */
+            max-width: 600px; /* Lățimea maximă a formularului */
+            background: white; /* Fundal alb pentru formular */
+            padding: 20px; /* Padding pentru formular */
+            border-radius: 10px; /* Colțuri rotunjite */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Umbra pentru formular */
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .field {
+            margin-bottom: 10px;
+        }
+        .field label {
+            display: block;
+            font-weight: bold;
+        }
+        .field input, .field textarea, .field select {
+            width: calc(100% - 22px); /* Ajustăm lățimea pentru a se potrivi cu padding-ul */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .field textarea {
+            height: 60px;
+        }
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .signature div {
+            flex: 1; /* Fiecare div ocupă un spațiu egal */
+            margin-right: 10px; /* Spațiu între semnături */
+        }
+        .signature div:last-child {
+            margin-right: 0; /* Elimină margin-right pentru ultimul div */
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around; /* Aliniază butoanele radio pe orizontală */
+            margin-top: 10px; /* Spațiu deasupra grupului de butoane radio */
+        }
+        @media print {
+            body {
+                margin: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<img src="st1.png" alt="Imagine Stânga" class="side-image"> <!-- Imaginea din stânga -->
+
+<div class="form-container">
+    <div class="container">
+        <h1>FORMULAR DE INTERNARE</h1>
+
+        <div class="section">
+            <h2>1. DATE DE IDENTIFICARE ALE PACIENTULUI</h2>
+            <div class="field">
+                <label>Nume și prenume:</label>
+                <input type="text" placeholder="Introduceți numele și prenumele">
+            </div>
+            <div class="field">
+                <label>CNP / Serie și număr act de identitate:</label>
+                <input type="text" placeholder="Introduceți CNP sau act de identitate">
+            </div>
+            <div class="field">
+                <label>Data nașterii:</label>
+                <input type="date">
+            </div>
+            <div class="field">
+                <label>Sex:</label>
+                <select>
+                    <option value="">Selectați sexul</option>
+                    <option value="masculin">Masculin</option>
+                    <option value="feminin">Feminin</option>
+                    <option value="altul">Altul</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Naționalitate:</label>
+                <input type="text" placeholder="Introduceți naționalitatea">
+            </div>
+            <div class="field">
+                <label>Domiciliu (adresă completă):</label>
+                <input type="text" placeholder="Introduceți adresa completă">
+            </div>
+            <div class="field">
+                <label>Telefon de contact:</label>
+                <input type="text" placeholder="Introduceți numărul de telefon">
+            </div>
+            <div class="field">
+                <label>Persoană de contact în caz de urgență:</label>
+                <input type="text" placeholder="Nume">
+                <input type="text" placeholder="Relație">
+                <input type="text" placeholder="Telefon">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. DATE DESPRE INTERNARE</h2>
+            <div class="field">
+                <label>Data și ora internării:</label>
+                <input type="datetime-local">
+            </div>
+            <div class="field">
+                <label>Secția / compartimentul:</label>
+                <select>
+                    <option value=""> Selectați secția</option>
+                    <option value="cardiologie">Cardiologie</option>
+                    <option value="neurologie">Neurologie</option>
+                    <option value="chirurgie">Chirurgie</option>
+                    <option value="pediatrie">Pediatrie</option>
+                    <option value="ortopedie">Ortopedie</option>
+                    <option value="medicina_interna">Medicină Internă</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Tipul internării:</label>
+                <select>
+                    <option value="">Selectați tipul internării</option>
+                    <option value="urgenta">Internare de urgență</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Motivul internării:</label>
+                <input type="text" placeholder="Introduceți motivul">
+            </div>
+            <div class="field">
+                <label>Medicul curant:</label>
+                <input type="text" placeholder="Introduceți numele medicului">
+            </div>
+            <div class="field">
+                <label>Diagnosticul la internare (prezumtiv):</label>
+                <input type="text" placeholder="Introduceți diagnosticul">
+            </div>
+            <div class="field">
+                <label>Metoda de prezentare:</label>
+                <select>
+                    <option value="">Selectați metoda de trimitere</option>
+                    <option value="prezentare_directa">Prezentare directă</option>
+                    <option value="trimitere_med_familie">Trimitere de la medicul de familie</option>
+                    <option value="transfer_interspitalicesc">Transfer interspitalicesc</option>
+                    <option value="ambulanta">Ambulanța</option>
+                    <option value="smurd">SMURD</option>
+                    <option value="anp">ANP (penitenciar)</option>
+                    <option value="igpr">IGPR (Inspectoratul General al Poliției Române)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. ISTORIC MEDICAL</h2>
+            <div class="field">
+                <label>Antecedente personale patologice:</label>
+                <textarea placeholder="Introduceți antecedentele personale patologice"></textarea>
+            </div>
+            <div class="field">
+                <label>Antecedente heredocolaterale:</label>
+                <textarea placeholder="Introduceți antecedentele heredocolaterale"></textarea>
+            </div>
+            <div class="field">
+                <label>Istoric de boli infecțioase și vaccinări:</label>
+                <textarea placeholder="Introduceți istoricul de boli infecțioase și vaccinări"></textarea>
+            </div>
+            <div class="field">
+                <label>Consumul de substanțe:</label>
+                <textarea placeholder="Introduceți informații despre consumul de substanțe"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>4. EXAMEN CLINIC LA INTERNARE</h2>
+            <div class="field">
+                <label>Status general:</label>
+                <input type="text" placeholder="Conștient / Orientat / Dezorientat">
+            </div>
+            <div class="field">
+                <label>Semne vitale:</label>
+                <textarea placeholder="Introduceți semnele vitale (tensiune arterială, puls, frecvență respiratorie, temperatură)"></textarea>
+            </div>
+            <div class="field">
+                <label>Aspect tegumente și mucoase:</label>
+                <textarea placeholder="Introduceți aspectul tegumentelor și mucoaselor"></textarea>
+            </div>
+            <div class="field">
+                <label>Starea aparatului cardiovascular:</label>
+                <textarea placeholder="Introduceți starea aparatului cardiovascular"></textarea>
+            </div>
+            <div class="field">
+                <label>Starea aparatului respirator:</label>
+                <textarea placeholder="Introduceți starea aparatului respirator"></textarea>
+            </div>
+            <div class="field">
+                <label>Starea aparatului digestiv:</label>
+                <textarea placeholder="Introduceți starea aparatului digestiv"></textarea>
+            </div>
+            <div class="field">
+                <label>Starea aparatului renal:</label>
+                <textarea placeholder="Introduceți starea aparatului renal"></textarea>
+            </div>
+            <div class="field">
+                <label>Starea neurologică:</label>
+                <textarea placeholder="Introduceți starea neurologică"></textarea>
+            </div>
+            <div class="field">
+                <label>Alte semne clinice relevante:</label>
+                <textarea placeholder="Introduceți alte semne clinice relevante"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. INVESTIGAȚII PARACLINICE LA INTERNARE</h2>
+            <div class="field">
+                <label>Analize de laborator solicitate:</label>
+                <textarea placeholder="Introduceți analizele de laborator solicitate"></textarea>
+            </div>
+            <div class="field">
+                <label>Examene imagistice indicate:</label>
+                <textarea placeholder="Introduceți examenele imagistice indicate"></textarea>
+            </div>
+            <div class="field">
+                <label>Alte investigații necesare:</label>
+                <textarea placeholder="Introduceți alte investigații necesare"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. PLAN DE TRATAMENT ȘI ÎNGRIJIRI MEDICALE</h2>
+            <div class="field">
+                <label>Medicația inițială administrată:</label>
+                <textarea placeholder="Introduceți medicația inițială administrată"></textarea>
+            </div>
+            <div class="field">
+                <label>Proceduri sau intervenții planificate:</label>
+                <textarea placeholder="Introduceți procedurile sau intervențiile planificate"></textarea>
+            </div>
+            <div class="field">
+                <label>Regim igieno-dietetic recomandat:</label>
+                <textarea placeholder="Introduceți regimul igieno-dietetic recomandat"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. CONSIMȚĂMÂNT INFORMAT</h2>
+            <div class="field">
+                <label>Confirmare că pacientul a fost informat despre diagnosticul prezumtiv, tratament și riscuri:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="consent" value="da"> Da</label>
+                    <label><input type="radio" name="consent" value="nu"> Nu</label>
+                </div>
+            </div>
+            <div class="field signature">
+                <div style="flex: 1; margin-right: 10px;">
+                    <label>Semnătura pacientului / aparținătorului:</label>
+                    <input type="text" placeholder="Semnătura" style="width: 100%;">
+                </div>
+                <div style="flex: 1;">
+                    <label>Semnătura medicului curant:</label>
+                    <input type="text" placeholder="Semnătura" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>8. OBSERVAȚII ȘI MENȚIUNI SUPLIMENTARE</h2>
+            <div class="field">
+                <label>Note privind evoluția imediată a pacientului:</label>
+                <textarea placeholder="Introduceți notele privind evoluția pacientului"></textarea>
+            </div>
+            <div class="field">
+                <label>Alte informații relevante pentru caz:</label>
+                <textarea placeholder="Introduceți alte informații relevante"></textarea>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>9. DATE ADMINISTRATIVE</h2>
+            <div class="field">
+                <label>Codul de internare:</label>
+                <input type="text" placeholder="Introduceți codul de internare">
+            </div>
+            <div class="field">
+                <label>Asigurare medicală:</label>
+                <input type="text" placeholder="CAS / privat / neasigurat">
+            </div>
+            <div class="field">
+                <label>Costuri estimate ale îngrijirii (dacă este aplicabil):</label>
+                <input type="text" placeholder="Introduceți costurile estimate">
+            </div>
+            <div class="field signature">
+                <div>
+                    <label>Semnătura și parafa medicului care efectuează internarea:</label>
+                    <input type="text" placeholder="Semnătura și parafa" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<img src="dr1.png" alt="Imagine Dreapta" class="side-image"> <!-- Imaginea din dreapta -->
+
+<script>
+    // Obține luna curentă
+    const date = new Date();
+    const options = { month: 'long' };
+    const lunaCurenta = date.toLocaleDateString('ro-RO', options);
+    
+    // Setează titlul paginii
+    document.title = `FORMULAR DE INTERNARE ${lunaCurenta.toUpperCase()}`;
+</script>
+
+</body>
+</html>
